@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Aloitus from './components/Aloitus';
-import { v4 as uuid } from 'uuid';
+import Lisaa from './components/Lisaa';
+import Poista from './components/Poista';
+import Tanaan from './components/Tanaan';
 
 function App() {
 
@@ -19,7 +21,7 @@ function App() {
             ...birthday,
             date : new Date(birthday.date)
           }
-        }))
+        }));
       }
     }
 
@@ -27,13 +29,13 @@ function App() {
       ladattu.current = true;
     }
 
-  }, [])
+  }, []);
 
   useEffect(() => {
 
     localStorage.setItem("birthdays", JSON.stringify(birthdays))
 
-  }, [birthdays])
+  }, [birthdays]);
 
 
   return (
@@ -41,6 +43,12 @@ function App() {
     <Routes>
 
       <Route path="/" element={<Aloitus birthdays={birthdays} />} />
+
+      <Route path="/add" element={<Lisaa birthdays={birthdays} setBirthdays={setBirthdays} />} />
+
+      <Route path="/delete/:id" element={<Poista birthdays={birthdays} setBirthdays={setBirthdays} />} />
+
+      <Route path="/tidbit/:id" element={<Tanaan birthdays={birthdays} />} />
 
     </Routes>
 
