@@ -69,6 +69,12 @@ const Lisaa : React.FC<Props> = ({ birthdays, setBirthdays }) : React.ReactEleme
                 <form onSubmit={handleSubmit} >
                     <Stack
                         spacing={2}
+                        sx={{
+                            backgroundColor: "white",
+                            borderColor:"blue",
+                            border:"solid thin",
+                            padding:"3vh"
+                        }}
                     >
                         <TextField
                             label="nimi"
@@ -85,6 +91,7 @@ const Lisaa : React.FC<Props> = ({ birthdays, setBirthdays }) : React.ReactEleme
                                                         helperText={errors.date}
                                                     />
                             }
+                            disableMaskedInput={true}
                         />
                         <Button
                             variant="contained"

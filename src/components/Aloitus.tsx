@@ -20,6 +20,7 @@ const Aloitus : React.FC<Props> = ({ birthdays }) : React.ReactElement => {
         >
             <Stack
                 sx={{
+                    backgroundColor: "white",
                     borderColor:"blue",
                     border:"solid thin",
                     padding:"3vh"

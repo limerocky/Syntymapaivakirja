@@ -48,8 +48,11 @@ const Tanaan : React.FC<Props> = ({ birthdays }) : React.ReactElement => {
             alignItems="center"
             minHeight="98vh"
         >
-            <Typography>{text}</Typography>
+            <Typography
+                color="rgb(201, 195, 195)"
+            >{text}</Typography>
             <Button
+                sx ={{ color: "blue" }}
                 component={Link}
                 to="/"
             >Takaisin</Button>

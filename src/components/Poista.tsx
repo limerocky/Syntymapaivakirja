@@ -21,16 +21,21 @@ const Poista : React.FC<Props> = ({ birthdays, setBirthdays }) : React.ReactElem
             <Stack
                 spacing={2}
             >
-                <Typography>
+                <Typography
+                    color="rgb(201, 195, 195)"
+                >
                     Haluatko varmasti poistaa henkilön "{selected.name}" syntymäpäivän listasta?
                 </Typography>
                 <Button
+                    sx ={{ color: "blue" }}
                     variant="contained"
                     component={Link}
                     to="/"
                     onClick={() => setBirthdays(birthdays.filter((birthday : Birthday) => birthday.id !== id))}
                 >Vahvista</Button>
                 <Button
+                    sx ={{ color: "blue", background: "white"}}
+                    variant="outlined"
                     component={Link}
                     to="/"
                 >Peruuta</Button>
